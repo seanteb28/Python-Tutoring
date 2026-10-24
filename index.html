@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python tutoring | [Your name]</title>
+<meta name="description" content="Friendly one-to-one Python tutoring from a sixth former. Proceeds fund a School Aid trip to Romania.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f7fc; --surface:#ffffff; --ink:#14233b; --muted:#4a5b75;
+  --blue:#2f6a9f; --blue-ink:#ffffff; --yellow:#ffd43b; --line:#d3deec;
+  --code-bg:#14233b; --code-ink:#e6eefb; --code-dim:#8ea3c2; --code-key:#ffd43b; --code-str:#8fd3a8;
+  --head:"Sora","Segoe UI",Arial,sans-serif; --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1829; --surface:#17243a; --ink:#e8eefa; --muted:#a3b3cc;
+    --blue:#6aa8e0; --blue-ink:#0f1829; --line:#2a3b58; --code-bg:#0a1220;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.125rem/1.6 var(--body)}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0 0 .6em}
+h1{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.02em}
+h2{font-size:1.7rem}
+h3{font-size:1.1rem}
+p{margin:0 0 1em;max-width:62ch}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 1.25rem}
+header.top{padding:1rem 0}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.brand{font-family:var(--head);font-weight:700;text-decoration:none;color:var(--ink)}
+nav a{margin-left:1.2rem;text-decoration:none;color:var(--ink);font-weight:600}
+nav a:hover{text-decoration:underline}
+.hero{padding:2.5rem 0 3.5rem}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center}
+.btn{display:inline-block;background:var(--blue);color:var(--blue-ink);padding:.8rem 1.4rem;border-radius:8px;font-weight:600;text-decoration:none;border:0;font:inherit;font-weight:600;cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--line);margin-left:.5rem}
+.code{background:var(--code-bg);color:var(--code-ink);border-radius:12px;padding:1.2rem 1.4rem;font:.95rem/1.7 ui-monospace,"SF Mono",Consolas,monospace;overflow-x:auto;border-top:6px solid var(--yellow)}
+.code pre{margin:0}
+.k{color:var(--code-key)}.s{color:var(--code-str)}.c{color:var(--code-dim)}
+section{padding:3rem 0;border-top:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:1.5rem}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.3rem}
+.box p{margin:0;font-size:1rem;color:var(--muted)}
+.price{font-family:var(--head);font-size:2.2rem;font-weight:700}
+.price small{font-size:1rem;font-weight:500;color:var(--muted)}
+ul.tick{padding-left:1.2rem;margin:0 0 1em}
+ul.tick li{margin-bottom:.3em}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.progress{background:var(--line);border-radius:99px;height:14px;overflow:hidden;margin:.6rem 0}
+.progress span{display:block;height:100%;width:0%;background:var(--yellow)}
+form{display:grid;gap:1rem;max-width:560px}
+label{font-weight:600;display:grid;gap:.3rem}
+input,select,textarea{font:inherit;padding:.7rem;border-radius:8px;border:2px solid var(--line);background:var(--surface);color:var(--ink);width:100%}
+textarea{min-height:120px}
+.hp{position:absolute;left:-9999px}
+footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+@media (max-width:760px){
+  .hero .wrap,.split{grid-template-columns:1fr}
+  .btn.alt{margin:.6rem 0 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">[Your name] · Python tutor</a>
+    <nav aria-label="Main">
+      <a href="#lessons">Lessons</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Python lessons from someone who learned it recently.</h1>
+      <p>One-to-one online tutoring for GCSE, A-level and complete beginners. Clear explanations, real projects, no jargon. Every session helps fund my School Aid trip to Romania.</p>
+      <p><a class="btn" href="#contact">Book a session</a><a class="btn alt" href="#lessons">See what I teach</a></p>
+    </div>
+    <div class="code" aria-label="A short Python program about the fundraiser">
+<pre><span class="c"># my plan for June 2027</span>
+trip = <span class="s">"School Aid Romania"</span>
+goal = <span class="k">1000</span>
+raised = <span class="k">0</span>
+
+<span class="k">while</span> raised &lt; goal:
+    learn_python()
+    book_session()</pre>
+    </div>
+  </div>
+</div>
+
+<section id="lessons">
+  <div class="wrap">
+    <h2>What I teach</h2>
+    <p>Sessions run on video call. We write code together, and I set a small task to try before the next lesson.</p>
+    <div class="grid">
+      <div class="box"><h3>Complete beginners</h3><p>Variables, loops, functions and your first small programs. Good for ages 11 and up.</p></div>
+      <div class="box"><h3>GCSE Computer Science</h3><p>Python for the programming parts of the course, plus practice writing and debugging your own solutions.</p></div>
+      <div class="box"><h3>A-level and projects</h3><p>Help with coursework ideas, tidying messy code, and building things like games, bots and simple tools.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="wrap split">
+    <div>
+      <h2>Prices</h2>
+      <div class="box">
+        <div class="price">£[12] <small>per hour, one-to-one</small></div>
+        <p>First 30 minutes free, so you can see if it suits you. Pay after each session by bank transfer.</p>
+      </div>
+    </div>
+    <div>
+      <h2>How it works</h2>
+      <ul class="tick">
+        <li>Message me with the level and what you want to learn.</li>
+        <li>We pick a time that works for you and a parent or guardian.</li>
+        <li>We meet on video. A parent or guardian is welcome to sit in.</li>
+        <li>I send a short summary and a practice task afterwards.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap split">
+    <div>
+      <h2>About me</h2>
+      <p>I’m [Your name], a sixth form student at [Your school] studying [your subjects]. I’ve been writing Python for [X years] and have built [a project or two, e.g. a quiz game, a Discord bot].</p>
+      <p>You can see my work on <a href="[your GitHub link]">GitHub</a>.</p>
+    </div>
+    <div>
+      <h2>Why I’m tutoring</h2>
+      <p>I’m going to Romania in June 2027 with School Aid to help [short description of the work you’ll be doing]. I need to raise £1,000, and every lesson gets me closer.</p>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="0" aria-label="Fundraising progress"><span style="width:0%"></span></div>
+      <p style="margin:0;font-size:1rem;color:var(--muted)">£0 of £1,000 raised. I’ll update this as lessons happen.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Book a session or ask a question</h2>
+    <p>If you’re under 18, please ask a parent or guardian to send this message or be copied in.</p>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <label>Your name <input type="text" name="name" required autocomplete="name"></label>
+      <label>Parent or guardian email <input type="email" name="email" required autocomplete="email"></label>
+      <label>Level
+        <select name="level">
+          <option>Complete beginner</option>
+          <option>GCSE</option>
+          <option>A-level</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label>What would you like help with? <textarea name="message" required></textarea></label>
+      <button class="btn" type="submit">Send message</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Proceeds go towards my School Aid Romania trip. Sessions for under-18s are arranged through a parent or guardian.</p>
+  </div>
+</footer>
+
+</body>
+</html>
